@@ -107,7 +107,7 @@ code may contain underscores. Specific examples include:
     integration test could be named `linked_list_service_test`
 
 *   Using the `_test` suffix for
-    [package-level documentation examples](https://go.dev/blog/examples)
+    [package-level documentation examples](https://go.dev/blog/go-examples)
 
 [`tabwriter`]: https://pkg.go.dev/text/tabwriter
 [`k8s`]: https://pkg.go.dev/k8s.io/client-go/kubernetes
@@ -153,7 +153,7 @@ Long Name                   | Better Name
 `func (this *ReportWriter)` | `func (w *ReportWriter)`
 `func (self *Scanner)`      | `func (s *Scanner)`
 
-[Receiver]: https://golang.org/ref/spec#Method_declarations
+[Receiver]: https://go.dev/ref/spec#Method_declarations
 
 <a id="constant-names"></a>
 
@@ -224,7 +224,7 @@ should also be capitalized similar to their usage in English prose.
     In these cases, the entire initialism should be the same case (e.g. `ddos`,
     `IOS`, `GRPC`).
 
-[exportedness]: https://golang.org/ref/spec#Exported_identifiers
+[exportedness]: https://go.dev/ref/spec#Exported_identifiers
 
 <!-- Keep this table narrow. If it must grow wider, replace with a list. -->
 
@@ -509,7 +509,7 @@ func (db *DB) UserCount() (int, error) {
 The conventions around commentary (which include what to comment, what style to
 use, how to provide runnable examples, etc.) are intended to support the
 experience of reading the documentation of a public API. See
-[Effective Go](http://golang.org/doc/effective_go.html#commentary) for more
+[Effective Go](https://go.dev/doc/effective_go.html#commentary) for more
 information.
 
 The best practices document's section on [documentation conventions] discusses
@@ -1100,7 +1100,7 @@ n, _ := b.Write(p) // never returns a non-nil error
 ```
 
 For more discussion and examples of error handling, see
-[Effective Go](http://golang.org/doc/effective_go.html#errors) and
+[Effective Go](https://go.dev/doc/effective_go.html#errors) and
 [best practices](best-practices.md#error-handling).
 
 [`(*bytes.Buffer).Write`]: https://pkg.go.dev/bytes#Buffer.Write
@@ -1163,7 +1163,7 @@ error values. This greatly simplifies string-manipulation code at the cost of
 requiring more diligence from the programmer. In general, Go code in the Google
 codebase should return additional values for errors.
 
-[Effective Go section on multiple returns]: http://golang.org/doc/effective_go.html#multiple-returns
+[Effective Go section on multiple returns]: https://go.dev/doc/effective_go.html#multiple-returns
 
 <a id="indent-error-flow"></a>
 
@@ -1245,7 +1245,7 @@ field-by-field. The `gofmt` formatting for literals is generally quite good, but
 there are some additional rules for keeping these literals readable and
 maintainable.
 
-[composite literal syntax]: https://golang.org/ref/spec#Composite_literals
+[composite literal syntax]: https://go.dev/ref/spec#Composite_literals
 
 <a id="literal-field-names"></a>
 
@@ -1456,7 +1456,7 @@ Well-designed APIs often employ zero-value construction for enhanced
 readability. For example, omitting the three zero-value fields from the
 following struct draws attention to the only option that is being specified.
 
-[Zero-value]: https://golang.org/ref/spec#The_zero_value
+[Zero-value]: https://go.dev/ref/spec#The_zero_value
 
 ```go
 // Bad:
@@ -2019,7 +2019,7 @@ Also see [when panic is acceptable](best-practices.md#when-to-panic).
 
 **Note:** `log.Fatalf` is not the standard library log. See [#logging].
 
-[Effective Go section on errors]: http://golang.org/doc/effective_go.html#errors
+[Effective Go section on errors]: https://go.dev/doc/effective_go.html#errors
 [`os.Exit`]: https://pkg.go.dev/os#Exit
 
 <a id="must-functions"></a>
@@ -2033,9 +2033,9 @@ handling is preferred.
 
 This often comes up for functions called to initialize package-level variables
 exclusively at
-[package initialization time](https://golang.org/ref/spec#Package_initialization)
-(e.g. [template.Must](https://golang.org/pkg/text/template/#Must) and
-[regexp.MustCompile](https://golang.org/pkg/regexp/#MustCompile)).
+[package initialization time](https://go.dev/ref/spec#Package_initialization)
+(e.g. [template.Must](https://pkg.go.dev/text/template#Must) and
+[regexp.MustCompile](https://pkg.go.dev/regexp#MustCompile)).
 
 ```go
 // Good:
@@ -2335,8 +2335,8 @@ A [method receiver] can be passed either as a value or a pointer, just as if it
 were a regular function parameter. The choice between the two is based on which
 [method set(s)] the method should be a part of.
 
-[method receiver]: https://golang.org/ref/spec#Method_declarations
-[method set(s)]: https://golang.org/ref/spec#Method_sets
+[method receiver]: https://go.dev/ref/spec#Method_declarations
+[method set(s)]: https://go.dev/ref/spec#Method_sets
 
 **Correctness wins over speed or simplicity.** There are cases where you must
 use a pointer value. In other cases, pick pointers for large types or as
@@ -2560,7 +2560,7 @@ Use a *type definition*, `type T1 T2`, to define a new type. Use a
 new type. Type aliases are rare; their primary use is to aid migrating packages
 to new source code locations. Don't use type aliasing when it is not needed.
 
-[*type alias*]: http://golang.org/ref/spec#Type_declarations
+[*type alias*]: https://go.dev/ref/spec#Type_declarations
 
 <a id="use-percent-q"></a>
 
@@ -2652,7 +2652,7 @@ See also:
 *   [Go Tip #10: Configuration Structs and Flags](https://google.github.io/styleguide/go/index.html#gotip)
 *   [Go Tip #80: Dependency Injection Principles](https://google.github.io/styleguide/go/index.html#gotip)
 
-[standard `flag` package]: https://golang.org/pkg/flag/
+[standard `flag` package]: https://pkg.go.dev/flag
 [mixed caps]: guide#mixed-caps
 [complex CLIs]: best-practices#complex-clis
 [totw-45]: https://abseil.io/tips/45
@@ -2957,7 +2957,7 @@ See also:
 *   [Go FAQ] section on [testing frameworks] and their opinionated absence
 
 [useful failure messages]: #useful-test-failures
-[`fmt`]: https://golang.org/pkg/fmt/
+[`fmt`]: https://pkg.go.dev/fmt
 [marking test helpers]: #mark-test-helpers
 [Go FAQ]: https://go.dev/doc/faq
 [testing frameworks]: https://go.dev/doc/faq#testing_framework
@@ -3059,7 +3059,7 @@ string may break if the `json` package changes how it serializes the bytes.
 Instead, a more robust test would parse the contents of the JSON string and
 ensure that it is semantically equivalent to some expected data structure.
 
-[`json.Marshal`]: https://golang.org/pkg/encoding/json/#Marshal
+[`json.Marshal`]: https://pkg.go.dev/encoding/json#Marshal
 
 <a id="keep-going"></a>
 
@@ -3160,7 +3160,7 @@ Although the `cmp` package is not part of the Go standard library, it is
 maintained by the Go team and should produce stable equality results over time.
 It is user-configurable and should serve most comparison needs.
 
-[language-defined comparisons]: http://golang.org/ref/spec#Comparison_operators
+[language-defined comparisons]: https://go.dev/ref/spec#Comparison_operators
 [`cmp`]: https://pkg.go.dev/github.com/google/go-cmp/cmp
 [`cmp.Equal`]: https://pkg.go.dev/github.com/google/go-cmp/cmp#Equal
 [`cmp.Diff`]: https://pkg.go.dev/github.com/google/go-cmp/cmp#Diff
