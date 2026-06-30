@@ -107,7 +107,7 @@ code may contain underscores. Specific examples include:
     integration test could be named `linked_list_service_test`
 
 *   Using the `_test` suffix for
-    [package-level documentation examples](https://go.dev/blog/go-examples)
+    [package-level documentation examples](https://go.dev/blog/examples)
 
 [`tabwriter`]: https://pkg.go.dev/text/tabwriter
 [`k8s`]: https://pkg.go.dev/k8s.io/client-go/kubernetes
